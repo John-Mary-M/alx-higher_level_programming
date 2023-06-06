@@ -1,3 +1,5 @@
 #!/usr/bin/python3
-for i in range(ord('Z'), ord('A') - 1, -1):
-    print(chr(i + 32 if i % 2 == 1 else i), end='')
+for a in range(122, 96, -1):
+    if(a % 2 != 0):
+        a -= 32
+    print("{:s}".format(chr(a)), end="")
