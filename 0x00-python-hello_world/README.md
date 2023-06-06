@@ -11,7 +11,7 @@ The Python code is to be saved in the environment variable $PYCODE
 multilingual puzzle, followed by a new line.
 Use the function print
 
-3-print_number.py: Complete the provided [source code] (https://github.com/alx-tools/0x00.py/blob/master/3-print_number.py)
+3-print_number.py: Complete the provided (source code) [https://github.com/alx-tools/0x00.py/blob/master/3-print_number.py]
 in order to print the integer stored in the variable number, followed by Battery
 street, followed by a new line.
 You are not allowed to cast the variable number into a string
