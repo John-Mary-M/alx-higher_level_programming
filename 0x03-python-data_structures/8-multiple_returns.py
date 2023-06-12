@@ -6,6 +6,6 @@ def multiple_returns(sentence):
     sentence (_str_): _description_ sentence to work with
     """
     if sentence == '':
-        return None
+        return (len(sentence), None)
     x = sentence
     return (len(x), x[0])
