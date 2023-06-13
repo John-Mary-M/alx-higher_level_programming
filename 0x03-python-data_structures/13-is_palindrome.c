@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-* is_palindrome - checks if a singly linked list is a palindrome
+/** is_palindrome - checks if a singly linked list is a palindrome
  * @head: pointer to pointer to head of list
  * Return: 1 if palindrome, 0 otherwise
  */
