@@ -2,10 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/**
- * is_palindrome - checks for palindrome in a list
- * @head: double pointer to head of the list
- * Return: True 1 or False 0
+* is_palindrome - checks if a singly linked list is a palindrome
+ * @head: pointer to pointer to head of list
+ * Return: 1 if palindrome, 0 otherwise
  */
 int is_palindrome(listint_t **head)
 {
