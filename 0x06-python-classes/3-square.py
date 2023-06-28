@@ -3,6 +3,7 @@
 This module defines a class Square based on the script 2-square.py
 '''
 
+
 class Square:
     '''
     Represents a square object.
