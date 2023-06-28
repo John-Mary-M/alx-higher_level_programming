@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 '''
-This module defines a sqaure class based on 0-sqaure.py script in this directory
+This module defines a sqaure class based on 0-sqaure.py script in this
+directory
 '''
+
 
 class Square:
     """
