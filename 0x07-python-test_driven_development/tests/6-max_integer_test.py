@@ -10,7 +10,7 @@ class TestMaxInteger(unittest.TestCase):
     """
     def test_empty_list(self):  # Check for empty list
         result = max_integer([])
-        self.assertIsNone(result)
+        self.assertIsNone(result, None)
 
     def test_positive_numbers(self):  # check for positive numbers
         result = max_integer([1, 2, 3, 4])
@@ -31,10 +31,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_single_element_list(self):
         result = max_integer([5])
         self.assertEqual(result, 5)
-
-    def test_empty_list(self):
-        with self.assertRaises(TypeError):
-            result = max_integer([])
 
     def test_large_list(self):
         result = max_integer(list(range(1, 1000001)))
