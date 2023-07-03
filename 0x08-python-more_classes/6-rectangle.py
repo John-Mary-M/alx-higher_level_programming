@@ -12,7 +12,6 @@ class Rectangle():
         """
         self.width = width
         self.height = height
-        
         # increament number of instances with each initialization
         Rectangle.number_of_instances += 1
 
@@ -65,7 +64,6 @@ class Rectangle():
         if not self.perimeter():
             return ""
         return '\n'.join('#' * self.width for x in range(self.height))
-
 
     def __repr__(self):
         """represents rectangle as string object
