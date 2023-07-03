@@ -61,7 +61,6 @@ class Rectangle():
             return ""
         return '\n'.join('#' * self.width for x in range(self.height))
 
-
     def __repr__(self):
         """represents rectangle as string object
         """
