@@ -2,5 +2,6 @@
 """This module is a definition of a Rectangle class"""
 
 class Rectangle:
-    """Empty class"""
-    pass
+    """Makes rectangles"""
+    def __init__(self):
+        pass
