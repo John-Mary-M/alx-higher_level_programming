@@ -5,11 +5,33 @@ import sys
 
 
 def printBoard(board):
+    """
+    Prints the positions of the queens on the chessboard.
+
+    Args:
+        board (list): The chessboard with queens placed.
+
+    Returns:
+        None
+    """
     if any(1 in x for x in board):
         print([[idx, board[idx].index(1)] for idx, val in enumerate(board)])
 
 
 def isSafe(row, square, chessboard, N, diag):
+    """
+    Checks if it is safe to place a queen at a given position on the chessboard.
+
+    Args:
+        row (int): The current row.
+        square (int): The current square.
+        chessboard (list): The chessboard with queens placed.
+        N (int): The size of the board.
+        diag (int): The diagonal distance.
+
+    Returns:
+        bool: True if it is safe to place a queen, False otherwise.
+    """
     if chessboard[row][square]:
         return False
     if square - diag >= 0 and chessboard[row][square - diag]:
@@ -22,6 +44,18 @@ def isSafe(row, square, chessboard, N, diag):
 
 
 def placeSquare(row, position, chessboard, N):
+    """
+    Places a queen on a given row and position on the chessboard.
+
+    Args:
+        row (int): The current row.
+        position (int): The current position.
+        chessboard (list): The chessboard with queens placed.
+        N (int): The size of the board.
+
+    Returns:
+        int: 0 if a queen cannot be placed, 1 otherwise.
+    """
     for square in range(position, N):
         if 1 in chessboard[row]:
             return 0
@@ -30,6 +64,7 @@ def placeSquare(row, position, chessboard, N):
         chessboard[row][square] = 1
         return
     return 1
+
 
 if len(sys.argv) != 2:
     print("Usage: nqueens N")
