@@ -9,4 +9,4 @@ def lookup(obj):
     obj (__obj__): object to be looked up
 
     """
-    return dir(obj)
+    return [x for x in dir(obj)]
