@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module is a definition of Mylist class."""
 
+
 class MyList(list):
     """MyList class inherits from list class of the python standard
     library.
