@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""This module defines Class rectangle that inherits from class Base"""
+""" rectangle class"""
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle inherits from Base and creates rectangles"""
+    """makes a new rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializes"""
         self.width = width
@@ -12,6 +12,25 @@ class Rectangle(Base):
         self.x = x
         self.y = y
         super().__init__(id)
+
+    def to_dictionary(self):
+        """dictionary"""
+        dic = {'id': self.id, 'width': self.width, 'height': self.height,
+               'x': self.x, 'y': self.y}
+        return dic
+
+    def update(self, *args, **kwargs):
+        """updates attributes"""
+        if args:
+            i = 0
+            keys = ['id', 'width', 'height', 'x', 'y']
+            for arg in args:
+                setattr(self, keys[i], arg)
+                i += 1
+        elif kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
 
     def validator(self, name, value):
         """validates the shit out of it"""
