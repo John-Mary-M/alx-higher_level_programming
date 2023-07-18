@@ -39,13 +39,20 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """save to file"""
-        try:
-            jsons = cls.to_json_string([x.to_dictionary() for x in list_objs])
-        except:
-            jsons = '[]'
-        with open(cls.__name__+'.json', 'w', encoding='utf-8') as f:
-            f.write(jsons)
+        """ Save object in a file """
+        filename = "{}.json".format(cls.__name__)
+        list_dic = []
+
+        if not list_objs:
+            pass
+        else:
+            for i in range(len(list_objs)):
+                list_dic.append(list_objs[i].to_dictionary())
+
+        lists = cls.to_json_string(list_dic)
+
+        with open(filename, 'w') as f:
+            f.write(lists)
 
     @classmethod
     def load_from_file(cls):
@@ -58,16 +65,29 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        import csv
-        try:
-            csvs = [x.to_dictionary() for x in list_objs]
-        except:
-            csvs = '[]'
-        keys = csvs[0].keys()
-        with open(cls.__name__ + '.csv', 'w') as f:
-            writer = csv.DictWriter(f, keys)
-            writer.writeheader()
-            writer.writerows(csvs)
+        """ Method that saves a CSV file """
+        filename = "{}.csv".format(cls.__name__)
+
+        if cls.__name__ == "Rectangle":
+            list_dic = [0, 0, 0, 0, 0]
+            list_keys = ['id', 'width', 'height', 'x', 'y']
+        else:
+            list_dic = ['0', '0', '0', '0']
+            list_keys = ['id', 'size', 'x', 'y']
+
+        matrix = []
+
+        if not list_objs:
+            pass
+        else:
+            for obj in list_objs:
+                for kv in range(len(list_keys)):
+                    list_dic[kv] = obj.to_dictionary()[list_keys[kv]]
+                matrix.append(list_dic[:])
+
+        with open(filename, 'w') as writeFile:
+            writer = csv.writer(writeFile)
+            writer.writerows(matrix)
 
     @classmethod
     def load_from_file_csv(cls):
